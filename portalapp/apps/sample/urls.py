@@ -11,6 +11,8 @@ urlpatterns = [
     # The home page
     path('', views.index, name='home'),
 
+    path('restaurant/', views.pages, name='restaurant'),  # Ensure this maps correctly
+
     # Matches any html file
     re_path(r'^.*\.*', views.pages, name='pages'),
 

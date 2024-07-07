@@ -1,0 +1,21 @@
+<!-- templates/sample/create.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Restaurant</title>
+</head>
+<body>
+    <h1>Create New Restaurant</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+
+        <button type="submit">Create Restaurant</button>
+    </form>
+</body>
+</html>

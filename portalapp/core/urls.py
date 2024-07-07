@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import core
+import restaurant
 
 urlpatterns = [
     path('admin/', admin.site.urls),          # Django admin route
@@ -27,9 +28,13 @@ urlpatterns = [
     #Tenant
     path('viewcompanyprofile/BJL192PPTTO92PP123PP/', core.views.companyprofile, name='companyprofile'),
     path('editcompanyprofile/BJL192PPTTO92PP123PP/', core.views.editcompanyprofile, name='editcompanyprofile'),
+    path('edit_profile/BJL192PPTTO92PP123PP/', core.views.edit_profile, name='edit_profile'),
 
     #Main
-    path("", include("apps.main.urls")),             # UI Kits Html files
+    path("", include("apps.main.urls")),             # UI Kits Html files\
+
+    path('restaurant/', include('restaurant.urls')),
+    path('restaurant/list/', restaurant.views.restaurant_list, name='restaurant_list'),
 
 
 ]

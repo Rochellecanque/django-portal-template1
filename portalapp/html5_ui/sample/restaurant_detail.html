@@ -1,0 +1,19 @@
+<!-- templates/restaurant/restaurant_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Detail</title>
+</head>
+<body>
+    <h1>Restaurant Detail: {{ restaurant.name }}</h1>
+    <p>Description: {{ restaurant.description }}</p>
+    <p>Address: {{ restaurant.address }}</p>
+    <a href="{% url 'restaurant-update' restaurant.pk %}">Edit</a>
+    <form action="{% url 'restaurant-delete' restaurant.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+    <a href="{% url 'restaurant-list' %}">Back to Restaurant List</a>
+</body>
+</html>

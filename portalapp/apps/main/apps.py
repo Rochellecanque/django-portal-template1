@@ -1,5 +1,6 @@
 from django.apps import AppConfig
 from core import models as CORE_MODELS
+from restaurant.models import Restaurant
 
 #django method that registers the application
 class MainConfig(AppConfig):
@@ -17,6 +18,10 @@ class ApplicationSettings:
         print ("Enabling Supported Languages")
         CORE_MODELS.SupportedLanguage.enable_language('en-us')
         CORE_MODELS.SupportedLanguage.enable_language('fr')
+
+        print("Enabling Supported Languages for Restaurant Models")
+        # Restaurant.SupportedLanguage.enable_language('en-us')
+        # Restaurant.SupportedLanguage.enable_language('fr')
 
         #Setup application setting values
         print ("Initializing Application Settings")
@@ -36,3 +41,9 @@ class ApplicationSettings:
 
                 ]
         CORE_MODELS.ApplicationSetting.update_settings(MySettings)
+
+        print("Initializing Application Settings for Restaurant Models")
+        restaurant_settings = [
+            {'setting_key': 'APP_SETTING_KEY', 'languageKey': 'en-us', 'setting_value': 'Restaurant Settings Value in English'},
+            {'setting_key': 'APP_SETTING_KEY', 'languageKey': 'fr', 'setting_value': 'Restaurant Settings Value in French'},
+        ]
