@@ -9,6 +9,7 @@
 =========================================================
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 -->
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,7 +76,7 @@
   <!-- Specific JS goes HERE --> 
   {% block javascripts %}{% endblock javascripts %}
   
-  <script src="/static/core/assets/js/argon.js?v=1.2.0"></script>
+  <script src="{% static '/static/core/assets/js/argon.js?v=1.2.0' %}"></script>
 
 </body>
 

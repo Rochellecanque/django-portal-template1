@@ -1,0 +1,17 @@
+<!-- templates/restaurant/restaurant_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant List</title>
+</head>
+<body>
+    <h1>Restaurant List</h1>
+    <ul>
+        {% for restaurant in restaurants %}
+            <li><a href="{% url 'restaurant-detail' restaurant.pk %}">{{ restaurant.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'restaurant-create' %}">Create New Restaurant</a>
+</body>
+</html>

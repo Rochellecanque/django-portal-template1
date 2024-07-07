@@ -57,3 +57,25 @@ def companyprofile(request):
 def editcompanyprofile(request):
     context = context_maker(request, {})
     return template_loader(request, context, 'core/edit_companyprofile.html')
+
+@login_required
+def edit_profile(request):
+    context = context_maker(request, {})
+    return template_loader(request, context, 'core/edit_profile.html')
+
+
+# @login_required
+# def editprofile(request):
+#     if request.method == 'POST':
+#         form = UserChangeForm(request.POST, instance=request.user)
+#         if form.is_valid():
+#             form.save()
+#             messages.success(request, 'Your profile has been updated!')
+#             return redirect('userprofile')  # Redirect to the profile page after successful edit
+#     else:
+#         form = UserChangeForm(instance=request.user)
+    
+#     context = {
+#         'form': form
+#     }
+#     return render(request, 'core/edit_profile.html', context)

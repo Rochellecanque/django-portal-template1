@@ -1,11 +1,12 @@
 {% extends 'core/layouts/base.html' %}
 
+{% load static %}
 {% block title %} Profile {% endblock title %}
 
 {% block content %}
 
 <div class="header pb-6 d-flex align-items-center" 
-     style="min-height: 500px; background-image: url(/static/core/assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+     style="min-height: 500px; background-image: url({% static 'core/assets/img/theme/profile-cover.jpg' %}); background-size: cover; background-position: center top;">
   <!-- Mask -->
   <span class="mask bg-gradient-default opacity-8"></span>
   <!-- Header container -->
@@ -16,7 +17,7 @@
           Hello {{ request.user.username }}
         </h1>
         <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
-        <a href="#!" class="btn btn-neutral">Edit profile</a>
+        <a href="{% url 'edit_profile' %}" class="btn btn-neutral">Edit profile</a>
       </div>
     </div>
   </div>
@@ -26,12 +27,12 @@
   <div class="row">
     <div class="col-xl-4 order-xl-2">
       <div class="card card-profile">
-        <img src="/static/core/assets/img/theme/img-1-1000x600.jpg" alt="Image placeholder" class="card-img-top">
+        <img src="{% static 'core/assets/img/theme/img-1-1000x600.jpg' %}" alt="Image placeholder" class="card-img-top">
         <div class="row justify-content-center">
           <div class="col-lg-3 order-lg-2">
             <div class="card-profile-image">
               <a href="#">
-                <img src="/static/core/assets/img/theme/team-4.jpg" class="rounded-circle">
+                <img src="{% static 'core/assets/img/theme/team-4.jpg' %}" class="rounded-circle">
               </a>
             </div>
           </div>
@@ -98,7 +99,7 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Username</label>
-                    <input type="text" id="input-username" class="form-control" placeholder="Username" value="{{ request.user.username }}">
+                    <input type="text" id="input-username" class="form-control" placeholder="{{ request.user.username }}">
                   </div>
                 </div>
                 <div class="col-lg-6">
@@ -150,7 +151,7 @@
                 </div>
                 <div class="col-lg-4">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-country">Postal code</label>
+                    <label class="form-control-label" for="input-postal-code">Postal code</label>
                     <input type="number" id="input-postal-code" class="form-control" placeholder="Postal code">
                   </div>
                 </div>

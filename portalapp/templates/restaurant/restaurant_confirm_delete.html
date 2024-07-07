@@ -1,0 +1,17 @@
+<!-- templates/restaurant/restaurant_confirm_delete.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Delete Restaurant</title>
+</head>
+<body>
+    <h1>Confirm Delete Restaurant: {{ restaurant.name }}</h1>
+    <p>Are you sure you want to delete this restaurant?</p>
+    <form action="{% url 'restaurant-delete' restaurant.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Confirm Delete">
+    </form>
+    <a href="{% url 'restaurant-detail' restaurant.pk %}">Cancel</a>
+</body>
+</html>

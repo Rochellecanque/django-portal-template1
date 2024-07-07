@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ restaurant.name }}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">{{ restaurant.name }}</h1>
+        <p><strong>Description:</strong> {{ restaurant.description }}</p>
+        <p><strong>Address:</strong> {{ restaurant.address }}</p>
+        <a href="{% url 'restaurant' %}" class="btn btn-secondary">Back to List</a>
+    </div>
+</body>
+</html>
