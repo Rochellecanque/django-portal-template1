@@ -16,6 +16,7 @@ from restaurant import views as Restaurant_VIEWS
 from restaurant.models import Restaurant
 from restaurant.forms import RestaurantForm 
 
+#from .forms import EditProfileForm  
 
 def login_view(request):
     context = CORE_VIEWS.context_maker(request, {})
@@ -78,10 +79,29 @@ def userprofile (request):
     context = CORE_VIEWS.context_maker(request, {})
     return CORE_VIEWS.template_loader(request, context, 'authentication/profile.html')
 
-@login_required(login_url="/login/")
-def edit_profile (request):
-    context = CORE_VIEWS.context_maker(request, {})
-    return CORE_VIEWS.template_loader(request, context, 'authentication/edit_profile.html')
+# @login_required(login_url="/login/")
+# def edit_profile (request):
+#     context = CORE_VIEWS.context_maker(request, {})
+#     return CORE_VIEWS.template_loader(request, context, 'authentication/edit_profile.html')
+
+
+# @login_required
+# def edit_profile(request):
+#     profile = request.user.profile
+#     if request.method == 'POST':
+#         form = EditProfileForm(request.POST, instance=profile)
+#         if form.is_valid():
+#             form.save()
+#             messages.success(request, 'Your profile has been updated successfully.')
+#             return redirect('userprofile')  # Adjust this to your profile view URL
+#     else:
+#         form = EditProfileForm(instance=profile)
+    
+#     context = {
+#         'form': form
+#     }
+#     return render(request, 'authentication/edit_profile.html', context)
+
 
 #### Restaurant
 
