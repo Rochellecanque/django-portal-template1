@@ -1,4 +1,14 @@
- ## Task 1 – Clone Fahad Jawaid’s open source repo and make it run on your local environment
+# Setup
+
+  - `cd environments`
+  - `vagrant up --provision`
+  - `vagrant ssh`
+  - `cd /project_data/portalapp`
+  - `python manage.server runserver`
+  - http://localhost:8000/
+  - http://localhost:8000/restaurant/
+
+## Task 1 – Clone Fahad Jawaid’s open source repo and make it run on your local environment
 
 ![Task 1](/submission-lab1/images/task1-clone-run-repo.png) 
 
